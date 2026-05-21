@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaysian Football Analytics Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background-color: #a9cce3;
+            z-index: -1;
+        }
+        body::before { left: 0; }
+        body::after { right: 0; }
+
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+        }
+        h1 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #000;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+        .subtitle {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-left: 2px solid #666;
+            padding-left: 15px;
+        }
+        h2 {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #000;
+            margin: 40px 0 20px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+            font-weight: normal;
+        }
+        hr {
+            margin: 40px 0;
+            border: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        .chart-card {
+            background: #ffffff;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .viz-container {
+            min-height: 450px;
+            width: 100%;
+        }
+        footer {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <h1>Malaysian Football: Performance and Rivalries</h1>
+    <p class="subtitle">Domestic goalscoring, international head-to-heads, and historical trends (2015-2025)</p>
+
+    <h2>Domestic Landscape</h2>
+    <div class="chart-card">
+        <div id="map_chart" class="viz-container"></div>
+    </div>
+    <div class="chart-card">
+        <div id="wins_chart" class="viz-container"></div>
+    </div>
+
+    <hr>
+
+    <h2>International Scoring and Rivalries</h2>
+    <div class="chart-card">
+        <div id="goals_chart" class="viz-container"></div>
+    </div>
+    <div class="chart-card">
+        <div id="battle_chart" class="viz-container"></div>
+    </div>
+    <div class="chart-card">
+        <div id="goal_difference_chart" class="viz-container"></div>
+    </div>
+    <div class="chart-card">
+        <div id="home_away_chart" class="viz-container"></div>
+    </div>
+
+    <hr>
+
+    <h2>Rivalry Dynamics and Key Contributors</h2>
+    <div class="chart-card">
+        <div id="matrix_chart" class="viz-container"></div>
+    </div>
+    <div class="chart-card">
+        <div id="complex_chart" class="viz-container"></div>
+    </div>
+    <div class="chart-card">
+        <div id="top_scorers_chart" class="viz-container"></div>
+    </div>
+    <div class="chart-card">
+        <div id="tournament_chart" class="viz-container"></div>
+    </div>
+
+    <footer>
+        Data: ASEAN Football Results (1934-2025) | Malaysia Super League (2015-2025) | Malaysia international scorers.<br>
+        Interactive visualisations created with Vega-Lite.
+    </footer>
+</div>
+
+<script>
+    const embedOpt = { actions: false, renderer: "svg" };
+
+    function embedChart(container, specFile) {
+        vegaEmbed(container, specFile, embedOpt).catch(err => {
+            console.error(`Failed to embed ${container}:`, err);
+        });
+    }
+
+    embedChart("#map_chart", "map.json");
+    embedChart("#wins_chart", "domestic_wins.json");
+    embedChart("#goals_chart", "goal_histogram.json");
+    embedChart("#battle_chart", "asean_battle.json");
+    embedChart("#goal_difference_chart", "goal_difference.json");
+    embedChart("#home_away_chart", "home_away_winrate.json");
+    embedChart("#matrix_chart", "head_to_head_matrix.json");
+    embedChart("#complex_chart", "complex_rivalry.json");
+    embedChart("#top_scorers_chart", "top_scorers.json");
+    embedChart("#tournament_chart", "tournament_donut.json");
+</script>
+
+</body>
+</html>

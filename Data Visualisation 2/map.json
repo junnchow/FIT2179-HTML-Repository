@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Malaysian Domestic Football Goals by State",
+    "fontSize": 16
+  },
+  "width": "container",
+  "height": 450,
+  "data": {"url": "msl_state_goals_by_year.csv", "format": {"type": "csv"}},
+  "params": [{
+    "name": "Select_Year",
+    "value": 2024,
+    "bind": {"input": "range", "min": 2015, "max": 2025, "step": 1, "name": "Select Year: "}
+  }],
+  "projection": {"type": "mercator", "scale": 1800, "center": [109.5, 4.2]},
+  "transform": [
+    {"filter": "datum.Year == Select_Year"},
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/jnewbery/CartogramMalaysia/master/public/data/malaysia-states.topojson",
+          "format": {"type": "topojson", "feature": "states"}
+        },
+        "key": "properties.Name"
+      },
+      "as": "geo"
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1.2},
+  "encoding": {
+    "shape": {"field": "geo", "type": "geojson"},
+    "color": {
+      "condition": {"test": "datum.Goals == 0", "value": "#dcdcdc"},
+      "field": "Goals",
+      "type": "quantitative",
+      "scale": {"scheme": "goldred"},
+      "title": "Goals Scored",
+      "legend": {"titleFontSize": 14, "labelFontSize": 12}
+    },
+    "tooltip": [{"field": "State"}, {"field": "Goals"}, {"field": "Year"}]
+  },
+  "config": {"view": {"stroke": null}}
+}

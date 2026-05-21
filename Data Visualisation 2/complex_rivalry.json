@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Malaysia's Goal Difference vs Rivals Over Time", "fontSize": 16},
+  "data": {"url": "asean_results.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"filter": "datum.home_team == 'Malaysia' || datum.away_team == 'Malaysia'"},
+    {"calculate": "year(datum.date)", "as": "year"},
+    {"calculate": "datum.home_team == 'Malaysia' ? datum.home_score - datum.away_score : datum.away_score - datum.home_score", "as": "goal_diff"},
+    {"calculate": "datum.home_team == 'Malaysia' ? datum.away_team : datum.home_team", "as": "opponent"},
+    {"filter": "isValid(datum.goal_diff) && datum.year != null"}
+  ],
+  "params": [{"name": "year_brush", "select": {"type": "interval", "encodings": ["x"]}}],
+  "layer": [
+    {
+      "mark": {"type": "circle", "size": 80, "opacity": 0.7, "tooltip": true},
+      "encoding": {
+        "x": {"field": "year", "type": "quantitative", "scale": {"domain": {"param": "year_brush"}}, "title": "Year", "axis": {"format": "d", "titleFontSize": 14, "labelFontSize": 12}},
+        "y": {"field": "goal_diff", "type": "quantitative", "title": "Goal Difference (Malaysia - Opponent)", "axis": {"titleFontSize": 14, "labelFontSize": 12}},
+        "color": {"field": "opponent", "type": "nominal", "scale": {"scheme": "tableau10"}, "legend": {"title": "Opponent", "titleFontSize": 14, "labelFontSize": 12}},
+        "tooltip": [{"field": "year", "format": "d", "title": "Year"}, {"field": "opponent"}, {"field": "goal_diff", "title": "Goal Diff"}]
+      }
+    }
+  ],
+  "width": "container", "height": 400,
+  "config": {"view": {"stroke": null}}
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Rivalry Activity Over the Decades", "fontSize": 16, "subtitle": "Drag across bottom timeline to zoom"},
+  "data": {"url": "asean_results.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"calculate": "toNumber(substring(datum.date, 0, 4))", "as": "Match_Year"},
+    {"filter": "datum.Match_Year >= 1980"}
+  ],
+  "spacing": 20,
+  "vconcat": [
+    {
+      "width": "container", "height": 220,
+      "title": "Detailed View",
+      "layer": [
+        {
+          "mark": {"type": "area", "color": {"x1":1,"y1":1,"x2":1,"y2":0,"gradient":"linear","stops":[{"offset":0,"color":"#ffffff"},{"offset":1,"color":"#0072B2"}]}, "opacity": 0.7, "line": {"color": "#0072B2", "width": 2}, "interpolate": "monotone"},
+          "encoding": {
+            "x": {"field": "Match_Year", "type": "quantitative", "title": "", "scale": {"domain": {"param": "timeline_brush"}}, "axis": {"format": "d", "grid": false, "labelFontSize": 12}},
+            "y": {"aggregate": "count", "type": "quantitative", "title": "Total Matches", "axis": {"titleFontSize": 14, "labelFontSize": 12, "grid": true, "gridDash": [3,3]}}
+          }
+        },
+        {
+          "params": [{"name": "hover", "select": {"type": "point", "on": "pointerover", "nearest": true, "clear": "pointerout"}}],
+          "mark": {"type": "point", "size": 50},
+          "encoding": {
+            "x": {"field": "Match_Year", "type": "quantitative", "scale": {"domain": {"param": "timeline_brush"}}},
+            "y": {"aggregate": "count", "type": "quantitative"},
+            "color": {"condition": {"param": "hover", "empty": false, "value": "#004b7c"}, "value": "transparent"},
+            "tooltip": [{"field": "Match_Year", "title": "Year", "format": "d"}, {"aggregate": "count", "title": "Matches Played"}]
+          }
+        }
+      ]
+    },
+    {
+      "width": "container", "height": 50,
+      "title": "Drag Selector Timeline (1980 - Present)",
+      "params": [{"name": "timeline_brush", "select": {"type": "interval", "encodings": ["x"]}}],
+      "mark": {"type": "area", "color": "#b0c4de", "opacity": 0.5, "line": {"color": "#4682b4", "width": 1}, "interpolate": "monotone"},
+      "encoding": {
+        "x": {"field": "Match_Year", "type": "quantitative", "title": "Year", "axis": {"format": "d", "grid": false, "labelFontSize": 12, "titleFontSize": 14}},
+        "y": {"aggregate": "count", "type": "quantitative", "axis": null}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}

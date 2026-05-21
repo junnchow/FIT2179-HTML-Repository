@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Malaysia's Matches by Tournament Type", "fontSize": 16},
+  "data": {"url": "asean_results.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"filter": "datum.home_team == 'Malaysia' || datum.away_team == 'Malaysia'"},
+    {"aggregate": [{"op": "count", "as": "matches"}], "groupby": ["tournament"]},
+    {"filter": "datum.matches > 5"}
+  ],
+  "mark": {"type": "arc", "innerRadius": 60, "stroke": "#fff"},
+  "encoding": {
+    "theta": {"field": "matches", "type": "quantitative", "stack": "normalize"},
+    "color": {"field": "tournament", "type": "nominal", "title": "Tournament", "scale": {"scheme": "tableau20"}, "legend": {"titleFontSize": 14, "labelFontSize": 12, "orient": "top"}},
+    "tooltip": [{"field": "tournament"}, {"field": "matches"}]
+  },
+  "width": "container", "height": 450,
+  "config": {"view": {"stroke": null}}
+}

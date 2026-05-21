@@ -1,0 +1,109 @@
+date,home_team,away_team,team,scorer,minute,own_goal,penalty
+1973-05-23,Thailand,Malaysia,Malaysia,Shaharuddin Abdullah,70.0,False,False
+1973-05-23,Thailand,Malaysia,Malaysia,Harun Jusoh,89.0,False,False
+1976-06-05,China PR,Malaysia,Malaysia,Mokhtar Dahari,50.0,False,False
+1977-03-01,Malaysia,Thailand,Malaysia,James Wong,15.0,False,False
+1977-03-01,Malaysia,Thailand,Malaysia,Isa Bakar,17.0,False,False
+1977-03-01,Malaysia,Thailand,Malaysia,Isa Bakar,19.0,False,False
+1977-03-01,Malaysia,Thailand,Malaysia,James Wong,38.0,False,False
+1977-03-01,Malaysia,Thailand,Malaysia,James Wong,51.0,False,False
+1977-03-01,Malaysia,Thailand,Malaysia,James Wong,60.0,False,False
+1977-03-08,Malaysia,Hong Kong,Malaysia,Bakri Ibni,78.0,False,False
+1980-09-16,Malaysia,South Korea,Malaysia,Zulkifli Hamzah,90.0,False,False
+1980-09-18,Kuwait,Malaysia,Malaysia,Zulkifli Hamzah,44.0,False,False
+1980-09-20,United Arab Emirates,Malaysia,Malaysia,Abdah Alif,32.0,False,False
+1980-09-20,United Arab Emirates,Malaysia,Malaysia,Tukamin Bahari,89.0,False,False
+1980-09-23,Malaysia,Qatar,Malaysia,Tukamin Bahari,33.0,False,False
+1981-04-21,South Korea,Malaysia,Malaysia,James Wong Chye Fook,6.0,False,False
+1981-04-27,Malaysia,Thailand,Malaysia,Ibrahim Din,50.0,False,False
+1981-04-27,Malaysia,Thailand,Malaysia,Ibrahim Din,63.0,False,False
+1985-03-10,Malaysia,South Korea,Malaysia,Dollah Salleh,49.0,False,False
+1985-03-31,Malaysia,Nepal,Malaysia,Zainal Abidin Hassan,4.0,False,False
+1985-03-31,Malaysia,Nepal,Malaysia,Zainal Abidin Hassan,26.0,False,False
+1985-03-31,Malaysia,Nepal,Malaysia,Dollah Salleh,29.0,False,False
+1985-03-31,Malaysia,Nepal,Malaysia,Zainal Abidin Hassan,33.0,False,False
+1985-03-31,Malaysia,Nepal,Malaysia,Yunus Alif,40.0,False,False
+1989-05-23,Malaysia,Nepal,Malaysia,Azizol Abu Haniffah,2.0,False,False
+1989-05-23,Malaysia,Nepal,Malaysia,Dollah Salleh,90.0,False,True
+1989-05-25,Malaysia,Singapore,Malaysia,Dollah Salleh,61.0,False,False
+1989-06-03,Singapore,Malaysia,Malaysia,Lim Teong Kim,19.0,False,False
+1989-06-03,Singapore,Malaysia,Malaysia,Dollah Salleh,84.0,False,False
+1989-06-07,Malaysia,Nepal,Malaysia,Dollah Salleh,10.0,False,False
+1989-06-07,Malaysia,Nepal,Malaysia,Dollah Salleh,66.0,False,False
+1989-06-07,Malaysia,Nepal,Malaysia,Kurapiah Gunalan,81.0,False,False
+1993-05-01,Malaysia,Kuwait,Malaysia,Azman Adnan,59.0,False,False
+1993-05-03,Malaysia,Saudi Arabia,Malaysia,Abdul Mubin Mokhtar,31.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Azman Adnan,6.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Azman Adnan,14.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Azizol Abu Haniffah,32.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,A. Elangovan,42.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Abdul Mubin Mokhtar,47.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Abdul Mubin Mokhtar,54.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Azman Adnan,74.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Azizol Abu Haniffah,75.0,False,False
+1993-05-05,Malaysia,Macau,Malaysia,Zainal Abidin Hassan,87.0,False,False
+1993-05-18,Macau,Malaysia,Malaysia,Azman Adnan,10.0,False,False
+1993-05-18,Macau,Malaysia,Malaysia,Azman Adnan,43.0,False,False
+1993-05-18,Macau,Malaysia,Malaysia,Azizol Abu Haniffah,74.0,False,False
+1993-05-18,Macau,Malaysia,Malaysia,Paramasivan Ravindran,77.0,False,False
+1993-05-18,Macau,Malaysia,Malaysia,Paramasivan Ravindran,85.0,False,False
+1997-03-16,Malaysia,Bangladesh,Malaysia,Azman Adnan,43.0,False,False
+1997-03-16,Malaysia,Bangladesh,Malaysia,Idris Abdul Karim,87.0,False,False
+1997-03-20,Malaysia,Taiwan,Malaysia,Ahmad Che Zambil,2.0,False,False
+1997-03-20,Malaysia,Taiwan,Malaysia,Rosdee Sulong,16.0,False,False
+1997-03-31,Bangladesh,Malaysia,Malaysia,Zainal Abidin Hassan,,False,False
+2001-03-04,Qatar,Malaysia,Malaysia,Rosdi Talib,9.0,False,False
+2001-03-08,Hong Kong,Malaysia,Malaysia,Akmal Rizal Ahmad Rakhli,46.0,False,False
+2001-03-08,Hong Kong,Malaysia,Malaysia,Akmal Rizal Ahmad Rakhli,79.0,False,False
+2001-03-23,Hong Kong,Malaysia,Malaysia,Hairuddin Omar,86.0,False,False
+2001-03-25,Malaysia,Palestine,Malaysia,Akmal Rizal Ahmad Rakhli,21.0,False,False
+2001-03-25,Malaysia,Palestine,Malaysia,Hairuddin Omar,53.0,False,False
+2001-03-25,Malaysia,Palestine,Malaysia,Irwan Fadzli Idrus,56.0,False,False
+2001-03-25,Malaysia,Palestine,Malaysia,Akmal Rizal Ahmad Rakhli,62.0,False,True
+2004-02-18,Malaysia,Hong Kong,Malaysia,Rosdi Talib,39.0,False,False
+2004-11-17,Kuwait,Malaysia,Malaysia,Mohd Amri Yahyah,19.0,False,False
+2007-07-10,Malaysia,China PR,Malaysia,Indra Putra Mahayuddin,74.0,False,False
+2007-10-21,Bahrain,Malaysia,Malaysia,Mohd Bunyamin Omar,45.0,False,False
+2011-06-29,Malaysia,Taiwan,Malaysia,Mohd Safiq Rahim,28.0,False,False
+2011-06-29,Malaysia,Taiwan,Malaysia,Aidil Zafuan,54.0,False,False
+2011-07-03,Taiwan,Malaysia,Malaysia,Mohd Aidil Zafuan Abdul Radzak,8.0,False,False
+2011-07-03,Taiwan,Malaysia,Malaysia,Mohd Safiq Rahim,40.0,False,False
+2011-07-23,Singapore,Malaysia,Malaysia,Safee Sali,1.0,False,False
+2011-07-23,Singapore,Malaysia,Malaysia,Abdul Hadi Yahya,70.0,False,False
+2011-07-23,Singapore,Malaysia,Malaysia,Safee Sali,71.0,False,False
+2011-07-28,Malaysia,Singapore,Malaysia,Safee Sali,57.0,False,False
+2015-11-17,Malaysia,United Arab Emirates,Malaysia,Baddrol Bakhtiar,59.0,False,False
+2019-06-07,Malaysia,Timor-Leste,Malaysia,La'Vere Corbin-Ong,12.0,False,False
+2019-06-07,Malaysia,Timor-Leste,Malaysia,Shahrel Fikri,23.0,False,False
+2019-06-07,Malaysia,Timor-Leste,Malaysia,Norshahrul Idlan,43.0,False,False
+2019-06-07,Malaysia,Timor-Leste,Malaysia,Safawi Rasid,45.0,False,False
+2019-06-07,Malaysia,Timor-Leste,Malaysia,Safawi Rasid,59.0,False,False
+2019-06-07,Malaysia,Timor-Leste,Malaysia,Faiz Nasir,78.0,False,False
+2019-06-07,Malaysia,Timor-Leste,Malaysia,Akhyar Rashid,89.0,False,False
+2019-06-11,Malaysia,Timor-Leste,Malaysia,Shahrel Fikri,11.0,False,False
+2019-06-11,Malaysia,Timor-Leste,Malaysia,Shahrel Fikri,17.0,False,False
+2019-06-11,Malaysia,Timor-Leste,Malaysia,Mohamadou Sumareh,37.0,False,False
+2019-06-11,Malaysia,Timor-Leste,Malaysia,Akhyar Rashid,55.0,False,False
+2019-06-11,Malaysia,Timor-Leste,Malaysia,Shahrel Fikri,64.0,False,False
+2019-09-05,Indonesia,Malaysia,Malaysia,Mohamadou Sumareh,36.0,False,False
+2019-09-05,Indonesia,Malaysia,Malaysia,Syafiq Ahmad,65.0,False,False
+2019-09-05,Indonesia,Malaysia,Malaysia,Mohamadou Sumareh,90.0,False,False
+2019-09-10,Malaysia,United Arab Emirates,Malaysia,Syafiq Ahmad,1.0,False,False
+2019-11-14,Malaysia,Thailand,Malaysia,Brendan Gan,26.0,False,False
+2019-11-14,Malaysia,Thailand,Malaysia,Mohamadou Sumareh,57.0,False,False
+2019-11-19,Malaysia,Indonesia,Malaysia,Safawi Rasid,30.0,False,False
+2019-11-19,Malaysia,Indonesia,Malaysia,Safawi Rasid,73.0,False,False
+2021-06-11,Malaysia,Vietnam,Malaysia,Guilherme de Paula Lucrécio,72.0,False,True
+2021-06-15,Thailand,Malaysia,Malaysia,Safawi Rasid,52.0,False,True
+2023-11-16,Malaysia,Kyrgyzstan,Malaysia,Dion Cools,7.0,False,False
+2023-11-16,Malaysia,Kyrgyzstan,Malaysia,Khristiyan Brauzman,72.0,True,False
+2023-11-16,Malaysia,Kyrgyzstan,Malaysia,Dion Cools,77.0,False,False
+2023-11-16,Malaysia,Kyrgyzstan,Malaysia,Faisal Halim,90.0,False,False
+2023-11-21,Taiwan,Malaysia,Malaysia,Darren Lok,72.0,False,False
+2024-01-25,South Korea,Malaysia,Malaysia,Faisal Halim,51.0,False,False
+2024-01-25,South Korea,Malaysia,Malaysia,Arif Aiman Hanapi,62.0,False,True
+2024-01-25,South Korea,Malaysia,Malaysia,Romel Morales,90.0,False,False
+2024-06-06,Kyrgyzstan,Malaysia,Malaysia,Odilzhon Abdurakhmanov,38.0,True,False
+2024-06-11,Malaysia,Taiwan,Malaysia,Safawi Rasid,53.0,False,False
+2024-06-11,Malaysia,Taiwan,Malaysia,Paulo Josué,69.0,False,False
+2024-06-11,Malaysia,Taiwan,Malaysia,Adib Raop,90.0,False,False
