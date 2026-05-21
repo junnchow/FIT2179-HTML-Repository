@@ -1,0 +1,21 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Total Match Wins by Club in Malaysia Super League", "fontSize": 16},
+  "width": "container",
+  "height": 400,
+  "data": {"url": "MSL2015-2025.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"filter": "datum.FTR == 'H' || datum.FTR == 'A'"},
+    {"calculate": "datum.FTR == 'H' ? datum.HT : datum.AT", "as": "Winner"},
+    {"filter": "datum.Winner != 'Young Lions'"}
+  ],
+  "params": [{"name": "hover", "select": {"type": "point", "on": "pointerover"}}],
+  "mark": {"type": "bar", "cornerRadiusEnd": 3, "color": "#1f77b4"},
+  "encoding": {
+    "x": {"aggregate": "count", "type": "quantitative", "title": "Total Wins", "axis": {"titleFontSize": 14, "labelFontSize": 12}},
+    "y": {"field": "Winner", "type": "nominal", "title": "Club Team", "sort": "-x", "axis": {"titleFontSize": 14, "labelFontSize": 12}},
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.4},
+    "tooltip": [{"field": "Winner"}, {"aggregate": "count", "title": "Total Match Wins"}]
+  },
+  "config": {"view": {"stroke": null}}
+}

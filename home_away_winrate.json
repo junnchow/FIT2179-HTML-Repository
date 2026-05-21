@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Malaysia's Match Outcomes: Home vs Away", "fontSize": 16},
+  "data": {"url": "asean_results.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"filter": "datum.home_team == 'Malaysia' || datum.away_team == 'Malaysia'"},
+    {"calculate": "datum.home_team == 'Malaysia' ? 'Home' : 'Away'", "as": "venue"},
+    {"calculate": "(datum.home_team == 'Malaysia' && datum.home_score > datum.away_score) || (datum.away_team == 'Malaysia' && datum.away_score > datum.home_score) ? 'Win' : (datum.home_score == datum.away_score ? 'Draw' : 'Loss')", "as": "result"},
+    {"filter": "datum.result != null"},
+    {"aggregate": [{"op": "count", "as": "count"}], "groupby": ["venue", "result"]},
+    {"joinaggregate": [{"op": "sum", "field": "count", "as": "total_count"}], "groupby": ["venue"]},
+    {"calculate": "datum.count / datum.total_count * 100", "as": "percentage"}
+  ],
+  "width": "container", "height": 400,
+  "mark": {"type": "bar", "stroke": "white", "strokeWidth": 1},
+  "encoding": {
+    "x": {"field": "venue", "type": "nominal", "title": "", "axis": {"labelFontSize": 14, "labelAngle": 0}},
+    "y": {"field": "percentage", "type": "quantitative", "title": "Percentage (%)", "stack": "normalize", "axis": {"titleFontSize": 14, "labelFontSize": 12, "format": ".0f", "grid": true}},
+    "color": {
+      "field": "result",
+      "type": "nominal",
+      "scale": {"domain": ["Win", "Draw", "Loss"], "range": ["#4daf4a", "#cccccc", "#ff7f00"]},
+      "legend": {"title": "Outcome", "titleFontSize": 14, "labelFontSize": 12, "orient": "top"}
+    },
+    "tooltip": [{"field": "venue"}, {"field": "result"}, {"field": "percentage", "format": ".1f", "title": "Percentage (%)"}]
+  },
+  "config": {"view": {"stroke": null}}
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "When Does Malaysia Score?", "fontSize": 16},
+  "width": "container",
+  "height": 400,
+  "data": {"url": "malaysia_scorers.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"filter": "datum.minute != null && isValid(datum.minute) && datum.minute <= 90"},
+    {"calculate": "toNumber(datum.minute)", "as": "clean_minute"}
+  ],
+  "params": [{"name": "hover_effect", "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}}],
+  "mark": {"type": "bar", "stroke": "#d4af37", "strokeWidth": 1, "cursor": "pointer"},
+  "encoding": {
+    "x": {"field": "clean_minute", "type": "quantitative", "bin": {"maxbins": 18, "step": 5}, "title": "Match Minute (5-Minute Bins)", "axis": {"titleFontSize": 14, "labelFontSize": 12, "labelAngle": 0}},
+    "y": {"aggregate": "count", "type": "quantitative", "title": "Number of Goals Scored", "axis": {"titleFontSize": 14, "labelFontSize": 12, "grid": true, "tickMinStep": 1}},
+    "color": {"condition": {"param": "hover_effect", "value": "#ffc107"}, "value": "#ffe082"},
+    "tooltip": [{"aggregate": "count", "title": "Goals Scored"}]
+  },
+  "config": {"view": {"stroke": null}}
+}

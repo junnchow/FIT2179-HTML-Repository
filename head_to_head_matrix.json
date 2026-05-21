@@ -1,0 +1,19 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "ASEAN Head-to-Head Match Frequency Matrix", "fontSize": 16},
+  "width": "container", "height": 400,
+  "data": {"url": "asean_results.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"filter": {"field": "home_team", "oneOf": ["Malaysia","Thailand","Indonesia","Vietnam","Singapore","Myanmar","Philippines"]}},
+    {"filter": {"field": "away_team", "oneOf": ["Malaysia","Thailand","Indonesia","Vietnam","Singapore","Myanmar","Philippines"]}},
+    {"filter": "datum.home_team != datum.away_team"}
+  ],
+  "mark": {"type": "rect", "stroke": "#ffffff", "strokeWidth": 1.5},
+  "encoding": {
+    "x": {"field": "away_team", "type": "nominal", "title": "Away Team", "sort": ["Malaysia","Thailand","Indonesia","Vietnam","Singapore","Myanmar","Philippines"], "axis": {"labelAngle": -45, "titleFontSize": 14, "labelFontSize": 12}},
+    "y": {"field": "home_team", "type": "nominal", "title": "Home Team", "sort": ["Malaysia","Thailand","Indonesia","Vietnam","Singapore","Myanmar","Philippines"], "axis": {"titleFontSize": 14, "labelFontSize": 12}},
+    "color": {"aggregate": "count", "type": "quantitative", "title": "Matches Played", "scale": {"scheme": "blues"}, "legend": {"titleFontSize": 14, "labelFontSize": 12}},
+    "tooltip": [{"field": "home_team"}, {"field": "away_team"}, {"aggregate": "count", "title": "Total Encounters"}]
+  },
+  "config": {"view": {"stroke": null}}
+}
